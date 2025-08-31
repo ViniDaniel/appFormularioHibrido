@@ -1,0 +1,23 @@
+{% extends 'formulario/base.html' %}
+
+{%block content%}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">  
+
+<div class="form-container" >
+<h1>{{titulo}}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Salvar</button>
+    <Button type="reset" >Cancelar</Button>
+
+</form>
+
+</div>
+
+{% endblock %}

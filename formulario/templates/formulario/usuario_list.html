@@ -1,0 +1,14 @@
+{% extends 'formulario/base.html' %} {%block content%} {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/inicio.css' %}" />
+
+<div class="margem"></div>
+
+{% for usuario in usuario_list %}
+
+
+
+<div class="container">
+  <h1>Olá {{usuario.nome}}</h1>
+</div>
+{% endfor %} {% endblock %}

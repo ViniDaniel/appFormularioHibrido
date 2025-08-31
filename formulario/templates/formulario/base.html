@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'usuario_list' %}">Início</a>
+                    <a href="{% url 'usuario_form' %}">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+{% block content %} {% endblock %}
