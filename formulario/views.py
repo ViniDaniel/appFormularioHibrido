@@ -1,18 +1,19 @@
-from django.shortcuts import render
 from .models import Usuario
-from django.views.generic import ListView, CreateView
+from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import UsuarioForm
+from django.views.generic import DetailView
 
-
-class UsuarioListView(ListView):
+class UsuarioSuccessView(DetailView):
     model = Usuario
-    template_name = "formulario/usuario_list.html"
-
+    template_name = "formulario/usuario_sucesso.html"
+    context_object_name = "usuario"
 
 class UsuarioCreateView(CreateView):
     model = Usuario
     form_class = UsuarioForm
     template_name = "formulario/usuario_form.html"
-    success_url = reverse_lazy("usuario_list")
     extra_context = {"titulo": "Cadastre-se"}
+
+    def get_success_url(self):
+        return reverse_lazy("usuario_sucesso", kwargs={"pk": self.object.pk})

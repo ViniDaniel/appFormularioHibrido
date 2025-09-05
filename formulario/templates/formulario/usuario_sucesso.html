@@ -1,0 +1,10 @@
+{% extends 'formulario/base.html' %} {%block content%} {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/sucesso.css' %}" />
+
+<div class="container">
+  <h2>Cadastro realizado com sucesso!</h2>
+  <p>Bem-vindo, <strong>{{ usuario.nome }}</strong></p>
+</div>
+
+{% endblock %}

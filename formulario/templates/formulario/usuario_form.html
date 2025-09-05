@@ -1,23 +1,16 @@
-{% extends 'formulario/base.html' %}
+{% extends 'formulario/base.html' %} {%block content%} {% load static %}
 
-{%block content%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}" />
 
-{% load static %}
+<div class="form-container">
+  <h1>{{titulo}}</h1>
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">  
-
-<div class="form-container" >
-<h1>{{titulo}}</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
+  <form method="POST">
+    {% csrf_token %} {{ form.as_p }}
 
     <button type="submit">Salvar</button>
-    <Button type="reset" >Cancelar</Button>
-
-</form>
-
+    <button type="reset">Cancelar</button>
+  </form>
 </div>
 
 {% endblock %}
